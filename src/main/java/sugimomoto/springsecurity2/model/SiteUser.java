@@ -3,6 +3,8 @@ package sugimomoto.springsecurity2.model;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
+import sugimomoto.springsecurity2.validator.UniqueLogin;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,6 +17,7 @@ public class SiteUser {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @UniqueLogin
     @Size(min = 2, max = 20)
     private String username;
 
